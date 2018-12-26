@@ -1,0 +1,40 @@
+{%  from "common/_macros.html" import static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{% block title %}{% endblock %}</title>
+
+    {% include "common/_heads.html" %}
+   <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+</head>
+
+<link rel="stylesheet" href="{{ static("front/css/front_signbase.css") }}">
+<script src="{{ static("front/js/zlparam.js") }}"></script>
+{% block head %}
+
+{% endblock %}
+
+<body>
+    <div class="outer-box">
+        <div class="logo-img">
+            <a href="/"><img src="{{ static("common/images/zhiliao.jpg") }}" alt="logo"></a>
+            <h2>{% block h2_block %}
+            
+            {% endblock %}</h2>
+        </div>
+        <div class="sign-box">
+
+
+        {% block signbox %}
+        
+        {% endblock %}
+
+        </div>
+
+
+    </div>
+<spans style="display: none" id="return-to-span">{{ return_to }}</spans>
+</body>
+</html>

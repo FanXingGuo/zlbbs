@@ -22,5 +22,6 @@ def create_app():
 
 
 if __name__ == '__main__':
+    # Captcha.gene_graph_captcha()
     app=create_app()
     app.run()
